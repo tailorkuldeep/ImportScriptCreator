@@ -33,17 +33,18 @@ def addCol(col):
 
 
 def createSchema(cols, tableName):
-    query = "CREATE TABLE " + tableName + "{\n"
+    query = "CREATE TABLE [" + tableName + "](\n"
     for col in cols:
         query += addCol(col)
-    query += "}"
+    query = query[:-2]
+    query += "\n);"
     print(query)
 
 
 def main():
     
     cols = list(pd.read_csv(sys.argv[1]).columns)
-    tableName = sys.argv[1]
+    tableName = sys.argv[1][:-4]
 
     for col in cols:
         dataTypeMapper(col)
