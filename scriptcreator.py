@@ -2,11 +2,11 @@ import re
 import pandas as pd
 import sys
 import os
-import configparser
+#import configparser
 import glob
 
-config = configparser.ConfigParser()
-config.read(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'config.ini'))
+# config = configparser.ConfigParser()
+# config.read(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'config.ini'))
 
 datatypemap = {
     'test': 'test'
