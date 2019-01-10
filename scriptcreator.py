@@ -59,7 +59,7 @@ def createSchema(cols, tableName):
     return query
 
 def createSchemaFor(csv_name):
-    cols = list(pd.read_csv(csv_name).columns)
+    cols = list(pd.read_csv(csv_name,nrows = 1).columns)
     tableName = csv_name[:-4]
     for col in cols:
         dataTypeMapper(col)
