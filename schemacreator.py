@@ -43,7 +43,7 @@ def createSchema(cols, tableName):
 
 def main():
     
-    cols = list(pd.read_csv(sys.argv[1]).columns)
+    cols = list(pd.read_csv(sys.argv[1],nrows = 1).columns)
     tableName = sys.argv[1][:-4]
 
     for col in cols:
