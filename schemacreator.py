@@ -41,9 +41,10 @@ def createSchema(cols, tableName):
     print(query)
 
 
-def main():
-    
-    cols = list(pd.read_csv(sys.argv[1],nrows = 1).columns)
+def main(skiprows = 0):
+    if len(sys.argv) > 2:
+        skiprows = int(sys.argv[2])
+    cols = list(pd.read_csv(sys.argv[1],skiprows=skiprows,nrows = 1).columns)
     tableName = sys.argv[1][:-4]
 
     for col in cols:
